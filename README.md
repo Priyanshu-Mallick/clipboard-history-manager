@@ -1,3 +1,8 @@
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/priyanshumallick.clipboard-history-manager)](https://marketplace.visualstudio.com/items?itemName=priyanshumallick.clipboard-history-manager)
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/priyanshumallick.clipboard-history-manager)](https://marketplace.visualstudio.com/items?itemName=priyanshumallick.clipboard-history-manager)
+[![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/priyanshumallick.clipboard-history-manager)](https://marketplace.visualstudio.com/items?itemName=priyanshumallick.clipboard-history-manager)
+---
+
 # Clipboard History Manager
 
 > 📋 Never lose your clipboard history again! Track, search, and reuse everything you copy in VS Code.
@@ -275,13 +280,5 @@ Inspired by CopyClip for Mac and other clipboard managers.
 ## Support
 
 If you encounter any issues or have suggestions, please file an issue on the GitHub repository.
-
-
-## Marketplace Badge
-
-[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/priyanshumallick.clipboard-history-manager)](https://marketplace.visualstudio.com/items?itemName=priyanshumallick.clipboard-history-manager)
-[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/priyanshumallick.clipboard-history-manager)](https://marketplace.visualstudio.com/items?itemName=priyanshumallick.clipboard-history-manager)
-[![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/priyanshumallick.clipboard-history-manager)](https://marketplace.visualstudio.com/items?itemName=priyanshumallick.clipboard-history-manager)
----
 
 **Enjoy managing your clipboard history!** 📋✨
