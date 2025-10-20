@@ -1,0 +1,207 @@
+{
+  "name": "clipboard-history-manager",
+  "displayName": "Clipboard History Manager",
+  "description": "Track and manage clipboard history with quick access to previously copied items",
+  "version": "0.1.0",
+  "publisher": "priyanshumallick",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Priyanshu-Mallick/clipboard-history-manager"
+  },
+  "bugs": {
+    "url": "https://github.com/Priyanshu-Mallick/clipboard-history-manager/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "clipboard",
+    "history",
+    "copy",
+    "paste",
+    "productivity"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "clipboard-manager.showHistory",
+        "title": "Clipboard Manager: Show History",
+        "icon": "$(history)"
+      },
+      {
+        "command": "clipboard-manager.pasteFromHistory",
+        "title": "Clipboard Manager: Paste from History",
+        "icon": "$(clippy)"
+      },
+      {
+        "command": "clipboard-manager.clearHistory",
+        "title": "Clipboard Manager: Clear All History",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "clipboard-manager.deleteEntry",
+        "title": "Delete Entry",
+        "icon": "$(close)"
+      },
+      {
+        "command": "clipboard-manager.pinEntry",
+        "title": "Pin Entry",
+        "icon": "$(pin)"
+      },
+      {
+        "command": "clipboard-manager.unpinEntry",
+        "title": "Unpin Entry",
+        "icon": "$(pinned)"
+      },
+      {
+        "command": "clipboard-manager.copyAgain",
+        "title": "Copy Again",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "clipboard-manager.refreshView",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "clipboard-manager",
+          "title": "Clipboard Manager",
+          "icon": "$(clippy)"
+        }
+      ]
+    },
+    "views": {
+      "clipboard-manager": [
+        {
+          "id": "clipboardHistory",
+          "name": "Clipboard History"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "clipboard-manager.refreshView",
+          "when": "view == clipboardHistory",
+          "group": "navigation@1"
+        },
+        {
+          "command": "clipboard-manager.clearHistory",
+          "when": "view == clipboardHistory",
+          "group": "navigation@2"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "clipboard-manager.copyAgain",
+          "when": "view == clipboardHistory",
+          "group": "inline@1"
+        },
+        {
+          "command": "clipboard-manager.pinEntry",
+          "when": "view == clipboardHistory && viewItem != clipboardEntry-pinned",
+          "group": "inline@2"
+        },
+        {
+          "command": "clipboard-manager.unpinEntry",
+          "when": "view == clipboardHistory && viewItem == clipboardEntry-pinned",
+          "group": "inline@2"
+        },
+        {
+          "command": "clipboard-manager.deleteEntry",
+          "when": "view == clipboardHistory",
+          "group": "inline@3"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "clipboard-manager.showHistory",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "clipboard-manager.pasteFromHistory",
+        "key": "ctrl+alt+v",
+        "mac": "cmd+alt+v",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Clipboard Manager",
+      "properties": {
+        "clipboardManager.maxHistorySize": {
+          "type": "number",
+          "default": 100,
+          "minimum": 10,
+          "maximum": 500,
+          "description": "Maximum number of clipboard entries to store"
+        },
+        "clipboardManager.showTimestamp": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show timestamp for each clipboard entry"
+        },
+        "clipboardManager.enableNotifications": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show notifications when clipboard is updated"
+        },
+        "clipboardManager.autoCleanupDays": {
+          "type": "number",
+          "default": 7,
+          "minimum": 1,
+          "maximum": 365,
+          "description": "Automatically remove entries older than specified days"
+        },
+        "clipboardManager.excludePatterns": {
+          "type": "array",
+          "default": [],
+          "description": "Patterns to exclude from clipboard history (regex)"
+        },
+        "clipboardManager.monitoringInterval": {
+          "type": "number",
+          "default": 500,
+          "minimum": 100,
+          "maximum": 5000,
+          "description": "Clipboard monitoring interval in milliseconds"
+        },
+        "clipboardManager.previewLength": {
+          "type": "number",
+          "default": 50,
+          "minimum": 20,
+          "maximum": 200,
+          "description": "Number of characters to show in preview"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "eslint": "^8.x",
+    "typescript": "^5.3.0"
+  }
+}

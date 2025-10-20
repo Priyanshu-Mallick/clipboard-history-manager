@@ -1,0 +1,20 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#007ACC"/>
+  
+  <!-- Clipboard base -->
+  <rect x="35" y="30" width="58" height="70" rx="4" fill="#FFFFFF"/>
+  
+  <!-- Clipboard clip -->
+  <rect x="50" y="25" width="28" height="12" rx="3" fill="#005A9E"/>
+  
+  <!-- History lines (stacked papers effect) -->
+  <line x1="45" y1="50" x2="83" y2="50" stroke="#007ACC" stroke-width="3" stroke-linecap="round"/>
+  <line x1="45" y1="62" x2="83" y2="62" stroke="#007ACC" stroke-width="3" stroke-linecap="round"/>
+  <line x1="45" y1="74" x2="75" y2="74" stroke="#007ACC" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Clock/history indicator -->
+  <circle cx="80" cy="85" r="12" fill="#FFFFFF" stroke="#007ACC" stroke-width="2"/>
+  <line x1="80" y1="85" x2="80" y2="79" stroke="#007ACC" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="85" x2="85" y2="85" stroke="#007ACC" stroke-width="2" stroke-linecap="round"/>
+</svg>
